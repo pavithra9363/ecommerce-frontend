@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playwrite+SK+Guides&family=Prata&family=Sriracha&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* styles.css */
+.custom-tooltip {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.custom-tooltip-arrow {
+  color: green;
+}
+
+@media (max-width: 480px) {
+  .custom-tooltip {
+    display: none !important; /* Hide tooltip on small screens */
+  }
+}
+
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar:hover{
+ 
+    background-color: #cce3de; /* A light green hover effect */
+    color: #1b4332; /* Darker green */
+  
+}
+
+a.active hr{
+    display:block
+}
+
+
+
+.nav{
+    @apply fixed top-14 w-full left-0 bg-white
+  }
+  .nav-li li{
+    /* border: 2px solid black; */
+    @apply bg-gradient-to-r
+     from-pink-700 via-purple-500 to-blue-700 hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-600 hover:to-pink-600 hover:text-white;
+    margin: 5px;
+    text-align: center;
+    color: black;
+    border-radius: 5px;
+    
+  }
+  .nav-li li:hover{
+    color: navy;
+    font-size: 20px;
+    background-color: aliceblue;
+    
+  }
