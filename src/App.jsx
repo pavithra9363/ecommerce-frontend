@@ -13,6 +13,7 @@ import NavBar from './Components/NavBar'
 import ShopContextprovider from './Context/ShopContext'
 import Footer from './Components/Footer'
 import Searchbar from './Components/Searchbar'
+import Success from './Components/Success'
 
 import { ToastContainer, toast } from 'react-toastify';
 import RegisterPage from './Components/Registerpage'
@@ -37,8 +38,9 @@ function App() {
         <Route path="/Login" element={<Login/>}></Route>
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="/PlaceOrder" element={<PlaceOrder/>}></Route>
-        <Route path="/Orders" element={<Orders/>}></Route>
-
+        <Route path="/Orders" element={<Orders/>}></Route>  
+        <Route path="/Success" element={<Success/>}></Route>
+      
 
       </Routes>
       <Footer/>

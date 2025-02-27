@@ -39,7 +39,13 @@ function Cart() {
   return (
     <div className="border-t border-color-black pt-14">
       <div className="text-2xl mb-3">
-        <h1 className="font-semibold">YOUR CART</h1>
+      <div className='text-center py-8 text-3xl'>
+        <h1 className="text-4xl font-bold text-gray-800 tracking-wide transition-transform duration-700 transform hover:scale-105">
+      <span className="text-green-500">YOUR</span>   CART
+    </h1>
+    <div className="mt-2 w-16 h-1 bg-green-500 mx-auto animate-pulse"></div>
+           
+        </div>
       </div>
       <div>
         {cartData.map((item, index) => {

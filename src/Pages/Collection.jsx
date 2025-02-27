@@ -24,7 +24,7 @@ const ItemsList = () => {
         ? prev.filter((item) => item !== season)
         : [...prev, season]
     );
-  };
+  }; 
 
   const handleSizeCategoryChange = (category) => {
     setSelectedSizeCategories((prev) =>
@@ -98,7 +98,7 @@ const ItemsList = () => {
         </div>
   
         {/* Size Category Filter */}
-        <div className="filter-section mb-6">
+        {/* <div className="filter-section mb-6">
           <h4 className="font-semibold text-lg mb-2 text-gray-700">Size Category</h4>
           {['Small', 'Medium', 'Large'].map((size) => (
             <label key={size} className="flex items-center space-x-2 text-gray-600">
@@ -110,12 +110,18 @@ const ItemsList = () => {
               <span>{size}</span>
             </label>
           ))}
-        </div>
+        </div> */}
       </div>
   
       {/* Products Section */}
       <div className="products flex-1 bg-gray-100">
-        <h3 className="text-xl font-bold mb-10 text-gray-800">Products</h3>
+      <div className='text-center py-8 text-3xl'>
+        <h1 className="text-4xl font-bold text-gray-800 tracking-wide transition-transform duration-700 transform hover:scale-105">
+      PRODUCTS
+    </h1>
+    <div className="mt-2 w-16 h-1 bg-green-500 mx-auto animate-pulse"></div>
+           
+        </div>
   
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {filteredItems.length > 0 ? (

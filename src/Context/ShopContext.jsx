@@ -1,4 +1,4 @@
-// In your ShopContextProvider file:
+//  ShopContextProvider file:
 import React, { createContext, useEffect, useState } from 'react';
 // import { Items } from '../../productdetail';
 import { toast } from 'react-toastify';
@@ -10,7 +10,9 @@ export const ShopContext = createContext();
  const delivery_fees=10;
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 console.log(backendUrl); 
+
 function ShopContextProvider(props) {
+
 const [search,setsearch]=useState(''); 
   const [Showsearch,setshowsearch]=useState(false);
  const[cart,setcart]=useState({});

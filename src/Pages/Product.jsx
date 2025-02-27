@@ -5,6 +5,8 @@ import { GoStarFill } from "react-icons/go";
 import { FaStarHalf } from "react-icons/fa";
 import Relatedproduct from '../Components/Relatedproduct';
 
+
+
 function Product() {
   const { product_Id } = useParams();  
   const { Items, addtocard } = useContext(ShopContext);
@@ -40,8 +42,10 @@ function Product() {
 
   return productData ? (
     <div className='transition-opacity ease-in duration-500 opacity-100 ml-0 md:ml-5 mt-5 mb-5'>
+        
       <div className='flex flex-col sm:flex-row w-full'>
         <div className='flex flex-col-reverse sm:flex-row w-2/3  '>
+       
           <div className='flex sm:flex-col justify-between  w-1/2 pr-5 md:ml-1 sm:ml-5 m-5 rounded-lg'>
             {productData.image.map((item, index) => (
               <img
@@ -111,6 +115,7 @@ function Product() {
       </div>
       {/* related products */}
       <Relatedproduct category={productData.category} />
+    
     </div>
   ) : (
     <div>No product found</div> // Display message if no product is found

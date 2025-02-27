@@ -73,15 +73,15 @@ function NavBar() {
      
       if (!token) {
         toast.info("Please login to access your profile.");
-        // navigate('/Login');
+        navigate('/Login');
       }
     }}
     className='p-5'
   >
-    <IoPersonOutline size={30}  />
+    <IoPersonOutline    className=' hidden sm:hidden md:flex' size={30}  />
   </p>
          {token &&  
-         <div className='group-hover:block hidden absolute right-5 pt-6'>
+         <div className='group-hover:block hidden    absolute right-5 pt-6  '>
             <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-white rounded-lg text-gray-500'>
               <p  onClick={logout}  className='cursor-pointer hover:text-black'>LogOut</p>
               <p className="hidden sm:flex md:hidden cursor-pointer hover:text-black">
@@ -115,7 +115,7 @@ function NavBar() {
   placement="top"
   
 >
-      <NavLink to='/Order' style={{ textDecoration: 'none' }} className="hidden md:flex sm:hidden">
+      <NavLink to='/Orders' style={{ textDecoration: 'none' }} className=" ">
         <button style={{ border: 'none', background: 'transparent', padding: '0' }}>
           <img
             src='Myorder.png'
@@ -169,30 +169,91 @@ function NavBar() {
 
       {/* Mobile Navigation */}
       {nav && (
-        <nav className='md:hidden absolute top-0 right-0 bottom-0 bg-white w-full transition-all duration-300 z-50'>
-          <ul className='flex flex-col gap-5 p-5' onClick={() => setNav(false)}>
-          <div className='flex justify-start'>back
-              <button onClick={() => setNav(false)} className='text-xl'>
-                <SlArrowLeft size={30} />
-              </button>
-            </div>
-            <NavLink to='/' className='text-xl text-gray-700'>
-              HOME
-            </NavLink>
-            <NavLink to='/Collection' className='text-xl text-gray-700'>
-              COLLECTION
-            </NavLink>
-            <NavLink to='/about' className='text-xl text-gray-700'>
-              ABOUT
-            </NavLink>
-            <NavLink to='/contact' className='text-xl text-gray-700'>
-              CONTACT
-            </NavLink>
-           
-          </ul>
-          
-        </nav>
-      )}
+  <nav
+    className="md:hidden text-center fixed top-0 right-0 bottom-0 bg-white w-80 transition-all duration-300 z-50"
+    style={{
+      transform: nav ? 'translateX(0)' : 'translateX(100%)',
+      transition: 'transform 0.3s ease-in-out',
+    }}
+  >
+    <ul className="flex flex-col gap-5 p-5" onClick={() => setNav(false)}>
+      {/* Back Button */}
+      <div className="flex justify-start">
+        <button onClick={() => setNav(false)} className="text-xl">
+          <SlArrowLeft size={30} />
+        </button>
+      </div>
+
+      {/* Navigation Links */}
+      <NavLink
+        to="/"
+        className="text-xl text-gray-700 border border-gray-300 p-2 rounded"
+      >
+        HOME
+      </NavLink>
+      <NavLink
+        to="/Collection"
+        className="text-xl text-gray-700 border border-gray-300 p-2 rounded"
+      >
+        COLLECTION
+      </NavLink>
+      <NavLink
+        to="/about"
+        className="text-xl text-gray-700 border border-gray-300 p-2 rounded"
+      >
+        ABOUT
+      </NavLink>
+      <NavLink
+        to="/contact"
+        className="text-xl text-gray-700 border border-gray-300 p-2 rounded"
+      >
+        CONTACT
+      </NavLink>
+
+      {/* Login and Logout */}
+      <NavLink to="/Login" style={{ textDecoration: 'none' }}>
+        <Button
+          sx={{
+            backgroundColor: 'orange',
+            color: 'white',
+            fontWeight: 'medium',
+            padding: '10px 20px',
+            borderRadius: '8px',
+            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+            border: '1px solid orange',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              backgroundColor: 'darkblue',
+            },
+          }}
+        >
+          Login
+        </Button>
+      </NavLink>
+
+      <Button
+        onClick={logout}
+        style={{ textDecoration: 'none' }}
+        sx={{
+          backgroundColor: 'blue',
+          color: 'white',
+          fontWeight: 'medium',
+          padding: '10px 20px',
+          borderRadius: '8px',
+          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+          border: '1px solid orange',
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            backgroundColor: 'darkblue',
+          },
+        }}
+      >
+        Logout
+      </Button>
+    </ul>
+  </nav>
+)}
+
     </div>
   );
 }

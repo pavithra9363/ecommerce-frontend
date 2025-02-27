@@ -57,7 +57,7 @@ function PlaceOrder() {
         `${backendUrl}/api/order/place`,orderdata,{headers:{token}})
        if(response.data.success){
         // setcart({})
-        navigate('/Orders')
+        navigate('/Success')
        }
        else{
         toast.error(response.data.error)
@@ -76,62 +76,80 @@ function PlaceOrder() {
  
  
  
- 
    return (
-    <form   onSubmit={onsumithandler}   className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-[480px] pb-20">
-    {/* ------------------ Left Side ------------------- */}
-    <div className="flex flex-col gap-4 w-full sm:max-w-[480px]"> 
-      <div className="text-3xl sm:text-xl my-3">
-     
-            <span >DELIVERY  </span><span className='font-bold'>INFORMATION__ </span>
-        
-      </div>
-      <div className="flex gap-3">
-        <input required  onChange={onchangehandler} name='firstName' value={formdata.firstName}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full " type="text"  placeholder='First Name'
-        />
-        <input required onChange={onchangehandler} name='lastName' value={formdata.lastNamet}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text"  placeholder='Last Name'  
-        />
+    <form onSubmit={onsumithandler} className="flex flex-col sm:flex-row justify-between gap-6 pt-5 sm:pt-14 min-[480px] pb-20 bg-gray-50 px-4 sm:px-10">
+      {/* ------------------ Left Side ------------------- */}
+      <div className="flex flex-col gap-6 w-full sm:max-w-[480px]">
+        <div className="text-3xl sm:text-xl my-3 font-semibold">
+          <span className="text-gray-600">DELIVERY </span><span className='font-bold text-gray-800'>INFORMATION</span>
         </div>
-        <div className="flex gap-5">
-        <input required onChange={onchangehandler} name='email' value={formdata.email}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full " type="text"  placeholder='Email Address'
-        />
-        <input  onChange={onchangehandler} name='street' value={formdata.street}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text"  placeholder='Street'  
-        />
-      
+
+        {/* Personal Information */}
+        <div className="flex gap-3 flex-col sm:flex-row">
+          <input
+            required onChange={onchangehandler} name='firstName' value={formdata.firstName} 
+            className=" border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text"   placeholder="First Name"  
+          />
+          <input
+            required onChange={onchangehandler} name='lastName' value={formdata.lastName}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text" placeholder='Last Name'
+          />
+        </div>
+
+        {/* Address Fields */}
+        <div className="flex gap-5 flex-col sm:flex-row">
+          <input
+            required onChange={onchangehandler} name='email' value={formdata.email}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="email" placeholder='Email Address'
+          />
+          <input
+            required onChange={onchangehandler} name='street' value={formdata.street}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text" placeholder='Street'
+          />
+        </div>
+
+        {/* City & State */}
+        <div className="flex gap-3 flex-col sm:flex-row">
+          <input
+            required onChange={onchangehandler} name='city' value={formdata.city}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text" placeholder='City'
+          />
+          <input
+            required onChange={onchangehandler} name='state' value={formdata.state}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text" placeholder='State'
+          />
+        </div>
+
+        {/* Zipcode & Country */}
+        <div className="flex gap-3 flex-col sm:flex-row">
+          <input
+            required onChange={onchangehandler} name='zipcode' value={formdata.zipcode}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text" placeholder='Zipcode'
+          />
+          <input
+            required onChange={onchangehandler} name='country' value={formdata.country}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text" placeholder='Country'
+          />
+        </div>
+
+        {/* Phone Number */}
+        <div className="flex gap-3">
+          <input
+            required onChange={onchangehandler} name='phone' value={formdata.phone}
+            className="border border-gray-300 rounded py-2 px-4 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="number" placeholder='Phone'
+          />
+        </div>
       </div>
-      <div className="flex gap-3">
-        <input  required onChange={onchangehandler} name='city' value={formdata.city}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full " type="text"  placeholder='City'
-        />
-        <input  required onChange={onchangehandler} name='state' value={formdata.state}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text"  placeholder='State'  
-        />
-      
-      </div>
-      <div className="flex gap-3">
-        <input required onChange={onchangehandler} name='zipcode' value={formdata.zipcode}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full " type="text"  placeholder='Zipcode'
-        />
-        <input  required onChange={onchangehandler} name='country' value={formdata.country}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text"  placeholder='country'  
-        />
-      
-      </div>
-      <div className="flex gap-3">
-       
-        <input  required onChange={onchangehandler} name='phone' value={formdata.phone}
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="number"  placeholder='Phone'  
-        />
-      
-      </div>
-    {/* ------------------ Left Side ------------------- */}
-           
-     
-    </div> 
+ 
     <div  className='mt-5'>
         <div className='mt-8 min-w-80'>
           <CartTotal />

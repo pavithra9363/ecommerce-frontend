@@ -30,12 +30,7 @@
   font-style: normal;
 }
 
-.navbar:hover{
- 
-    background-color: #cce3de; /* A light green hover effect */
-    color: #1b4332; /* Darker green */
-  
-}
+
 
 a.active hr{
     display:block

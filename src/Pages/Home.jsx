@@ -5,6 +5,7 @@ import LatestPrduct from '../Components/LatestPrduct'
 import Bestproduct from '../Components/Bestproduct'
 import OurPolicy from '../Components/Ourpolicy'
 import NewsletterBox from '../Components/NewsletterBox'
+import Relatedproduct from '../Components/Relatedproduct'
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <Bestproduct/>
       <OurPolicy/>
       <NewsletterBox/>
+      
     </div>
   )
 }
